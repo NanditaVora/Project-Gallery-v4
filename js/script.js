@@ -37,6 +37,10 @@ let activeTrack = null; // null == show all
 /* ---------- Render helpers ---------- */
 
 function createTrackButtons() {
+    // Clear existing buttons first to prevent duplicates
+    trackFilters.innerHTML = '';
+    console.log('Creating track buttons...');
+
     // Build buttons based on TRACK_MAP keys (except All is not shown as button here)
     Object.keys(TRACK_MAP).forEach(code => {
         if (code === "All") return;
@@ -55,6 +59,8 @@ function createTrackButtons() {
         });
         trackFilters.appendChild(btn);
     });
+
+    console.log('Track buttons created:', trackFilters.children.length);
 }
 
 function renderProjectsList(projects) {
@@ -72,6 +78,9 @@ function renderProjectsList(projects) {
 
         const card = document.createElement('article');
         card.className = 'card project-card h-100';
+        if (p.type === 'Capstone Project') {
+            card.classList.add('capstone');
+        }
         card.tabIndex = 0;
         card.setAttribute('aria-labelledby', `title-${idx}`);
         card.setAttribute('data-track', p.track || '');
@@ -179,7 +188,10 @@ function onTrackClick(event) {
     // 3️⃣ Apply matching theme (header + gallery background)
     applyTheme(trackCode);
 
-    // 4️⃣ Store active track globally
+    // 4️⃣ Update track information section
+    updateTrackInfoSection(trackCode);
+
+    // 5️⃣ Store active track globally
     activeTrack = trackCode;
 }
 
@@ -276,6 +288,51 @@ function applyTheme(trackCode) {
     }
 }
 
+// Function to update track information section
+function updateTrackInfoSection(trackCode) {
+    const trackNameElement = document.getElementById('trackName');
+    const trackMessageElement = document.getElementById('trackMessage');
+    const trackInfoSection = document.getElementById('trackInfoSection');
+
+    // Map track codes to full names and compelling messages
+    const trackInfo = {
+        'DA': {
+            name: 'Data Analytics',
+            message: 'Get Job-Ready Skills with Data Analysis'
+        },
+        'SE': {
+            name: 'Software Engineering',
+            message: 'Build Your Software Development Career'
+        },
+        'DM': {
+            name: 'Digital Marketing',
+            message: 'Master the Art of Digital Campaigns'
+        },
+        'CY': {
+            name: 'Cybersecurity',
+            message: 'Protect Systems with Advanced Security Skills'
+        },
+        'CD': {
+            name: 'Cloud',
+            message: 'Scale Your Expertise in Cloud Technologies'
+        },
+        'Banking': {
+            name: 'Banking',
+            message: 'Excel in Financial Services Industry'
+        }
+    };
+
+    // Get the track information or use defaults
+    const track = trackInfo[trackCode] || { name: 'Selected Track', message: 'Explore Professional Development' };
+
+    // Update the content
+    trackNameElement.textContent = track.name;
+    trackMessageElement.textContent = track.message;
+
+    // Show the section if it's hidden
+    trackInfoSection.style.display = 'block';
+}
+
 
 /* ---------- Initialization ---------- */
 
@@ -292,6 +349,10 @@ async function init() {
         });
         activeTrack = null;
         renderProjectsList(allProjects);
+
+        // Hide track information section when no track is selected
+        const trackInfoSection = document.getElementById('trackInfoSection');
+        trackInfoSection.style.display = 'none';
     });
 
     // theme selector
@@ -310,6 +371,9 @@ async function init() {
         // fallback: show empty array
         allProjects = [];
     }
+
+    // Create track filter buttons
+    createTrackButtons();
 
     // initial render
     //   renderProjectsList(allProjects);
@@ -330,6 +394,9 @@ async function init() {
         defaultBtn.classList.remove('btn-outline-primary');
         defaultBtn.setAttribute('aria-pressed', 'true');
     }
+
+    // Update track information section
+    updateTrackInfoSection(DEFAULT_TRACK);
 
     activeTrack = DEFAULT_TRACK;
     applyTheme(DEFAULT_TRACK);
@@ -361,5 +428,30 @@ function generateSVG(p) {
 
 
 
+// Scroll to top functionality
+function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) { // Show after scrolling 300px
+            scrollToTopBtn.style.display = 'flex';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    });
+
+    // Scroll to top when button is clicked
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // Start
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    initScrollToTop();
+});

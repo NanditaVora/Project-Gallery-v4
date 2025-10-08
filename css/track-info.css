@@ -1,0 +1,60 @@
+/* Track information section */
+#trackInfoSection {
+    background: linear-gradient(90deg, rgba(13, 110, 253, 0.08), rgba(13, 110, 253, 0.02));
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    display: none; /* Hidden by default */
+    position: sticky;
+    top: 70px; /* Height of the program header */
+    z-index: 999;
+}
+
+/* Scroll to top button */
+#scrollToTop {
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+#scrollToTop:hover img {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+#trackInfoSection h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: inherit;
+}
+
+#trackInfoSection p {
+    font-size: 1.1rem;
+    color: #495057;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Theme-specific track info colors */
+[data-theme="DA"] #trackInfoSection {
+    background: linear-gradient(90deg, rgba(0, 123, 255, 0.08), rgba(0, 123, 255, 0.02));
+}
+
+[data-theme="SE"] #trackInfoSection {
+    background: linear-gradient(90deg, rgba(40, 167, 69, 0.08), rgba(40, 167, 69, 0.02));
+}
+
+[data-theme="DM"] #trackInfoSection {
+    background: linear-gradient(90deg, rgba(255, 193, 7, 0.08), rgba(255, 193, 7, 0.02));
+}
+
+[data-theme="CY"] #trackInfoSection {
+    background: linear-gradient(90deg, rgba(220, 53, 69, 0.08), rgba(220, 53, 69, 0.02));
+}
+
+[data-theme="CD"] #trackInfoSection {
+    background: linear-gradient(90deg, rgba(111, 66, 193, 0.08), rgba(111, 66, 193, 0.02));
+}
+
+[data-theme="Banking"] #trackInfoSection {
+    background: linear-gradient(90deg, rgba(0, 123, 255, 0.08), rgba(0, 123, 255, 0.02));
+}

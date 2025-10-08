@@ -15,6 +15,7 @@
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/track-info.css">
 
     <meta name="color-scheme" content="light dark">
 </head>
@@ -22,18 +23,17 @@
 <body>
 
     <header id="programHeader" class="program-header" data-theme="DA" role="banner">
-        <div class="container py-3 d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-3">
-                <div class="program-logo" aria-hidden="true">PG</div>
-                <div>
-                    <h1 id="programTitle" class="h4 mb-0">Project Gallery</h1>
-                    <p id="programSub" class="mb-0 small text-muted">Showcasing course-end projects across tracks</p>
-                </div>
-            </div>
+        <!-- <div class="container py-3 d-flex align-items-center justify-content-between"> -->
+            <!-- Empty container for alignment -->
+        <!-- </div> -->
 
+        <!-- Track information section -->
+        <div id="trackInfoSection" class="container py-2 text-center">
+            <h1 id="trackName" class="h3 mb-3 fw-bold"></h1>
+            <p id="trackMessage" class="mb-4"></p>
         </div>
-        <p id="internalNote" class="mb-0 text-center">For Internal Use Only</p>
 
+        <p id="internalNote" class="mb-1 text-center">For Internal Use Only</p>
     </header>
 
     <main class="container my-4" id="mainContent">
@@ -42,7 +42,7 @@
             <div class="d-flex flex-wrap gap-2 align-items-center">
                 <div class="me-2 small text-muted">Filter by track</div>
                 <div id="trackFilters" class="btn-group" role="tablist" aria-label="Track navigation">
-                    <!-- Buttons injected by JS (for easy extension) -->
+                    <!-- Buttons will be injected by JS -->
                 </div>
 
                 <button id="clearFilter" class="btn btn-outline-secondary btn-sm ms-2"
@@ -53,36 +53,72 @@
         <!-- RTBs / Value Propositions (Enhanced Design) -->
         <section id="rtbSection" class="rtb-section py-5 my-4 text-center">
             <div class="container">
-                <h2 class="h4 mb-4 fw-semibold">Why Learners Love Our Projects</h2>
-                <div class="row g-4 justify-content-center" id="rtbRow">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="rtb-card p-4 h-100">
-                            <div class="rtb-icon mb-3">
-                                <i class="bi bi-lightbulb"></i>
-                            </div>
-                            <h5 class="rtb-title mb-2">Real-world Problems</h5>
-                            <p class="rtb-text small">Projects emulate real business challenges, ensuring practical,
-                                job-ready learning.</p>
+                <h2 class="h4 mb-4 fw-semibold">Reasons to Choose Our Program</h2>
+
+                <!-- First row with 5 tiles -->
+                <div class="row g-4 justify-content-center mb-4" id="rtbRow">
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Become job-ready</h5>
+                            <p class="rtb-text small">Build skills employers demand</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="rtb-card p-4 h-100">
-                            <div class="rtb-icon mb-3">
-                                <i class="bi bi-award"></i>
-                            </div>
-                            <h5 class="rtb-title mb-2">Portfolio-Ready</h5>
-                            <p class="rtb-text small">Each project produces tangible deliverables to showcase your
-                                skills to employers.</p>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Face interviews confidently</h5>
+                            <p class="rtb-text small">Practice with real scenarios</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="rtb-card p-4 h-100">
-                            <div class="rtb-icon mb-3">
-                                <i class="bi bi-tools"></i>
-                            </div>
-                            <h5 class="rtb-title mb-2">Tool Diversity</h5>
-                            <p class="rtb-text small">Work with top industry tools — Excel, SQL, Python, and
-                                visualization platforms.</p>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Gain holistic skills</h5>
+                            <p class="rtb-text small">Complete industry knowledge</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Learn by doing</h5>
+                            <p class="rtb-text small">Hands-on practical approach</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Do 80+ problems</h5>
+                            <p class="rtb-text small">Extensive practice opportunities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second row with 5 tiles -->
+                <div class="row g-4 justify-content-center" id="rtbRow2">
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Capstone project</h5>
+                            <p class="rtb-text small">For skill cementing</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Industry mentors</h5>
+                            <p class="rtb-text small">Learn from experts</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Flexible learning</h5>
+                            <p class="rtb-text small">Study at your pace</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Career support</h5>
+                            <p class="rtb-text small">Guidance for job placement</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-2">
+                        <div class="rtb-card p-3 h-100">
+                            <h5 class="rtb-title mb-2">Certification</h5>
+                            <p class="rtb-text small">Industry-recognized credentials</p>
                         </div>
                     </div>
                 </div>
@@ -94,6 +130,10 @@
         <!-- Project Gallery (Themed Background) -->
         <section id="gallerySection" class="project-gallery py-5" aria-live="polite">
             <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="h4 fw-bold mb-3">Project - Based Learning</h2>
+                    <p class="lead">At NIIT, you learn and grow exactly how you would on a real job. You will start from the fundamentals, receive support from our mentors and community, and build your way to the top - through professional work-like Full-stack and Backend web development projects.</p>
+                </div>
                 <div class="row g-6" id="projectGrid" role="list">
                     <!-- Project cards inserted by JS -->
                 </div>
@@ -106,6 +146,14 @@
         </section>
 
     </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="position-fixed" style="bottom: 20px; right: 20px; display: none; width: 40px; height: 40px; border: 1px solid; border-radius: 50%; background: lightgray; cursor: pointer;" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
 
     <!-- Project Details Modal -->
     <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">

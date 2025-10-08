@@ -66,6 +66,9 @@ body {
 .program-header {
     background: var(--banner-gradient);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* Logo / Badge */
@@ -206,6 +209,23 @@ body {
     padding-bottom: 3rem;
 }
 
+/* Fixed program header */
+#programHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+/* Add padding to main content to account for fixed header */
+#mainContent {
+    padding-top: 10rem; /* Adjust based on header height */
+}
+
 .project-gallery::before {
     content: "";
     position: absolute;
@@ -265,6 +285,17 @@ body {
     background: #ffffff;
 }
 
+/* Capstone project card styling */
+.project-card.capstone {
+    border: 2px solid #e67e22;
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.15);
+}
+
+.project-card.capstone .project-badge {
+    background-color: rgba(230, 126, 34, 0.1);
+    color: #e67e22;
+}
+
 .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.12);
@@ -281,23 +312,25 @@ body {
 
 /* Badge/Track */
 .project-badge {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.25px;
-    padding: 7px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 6px 10px;
+    font-weight: 500;
 }
 
 /* Title */
 .project-title {
-    font-size: 1.0rem;
+    font-size: 1.25rem;
     margin: auto;
+    font-weight: 600;
 }
 
 /* Brief description */
 .project-brief {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: #6c757d;
     margin:auto;
+    line-height: 1.4;
 }
 
 /* Tech pills */
