@@ -289,11 +289,13 @@ body {
 .project-card.capstone {
     border: 2px solid #e67e22;
     box-shadow: 0 4px 12px rgba(230, 126, 34, 0.15);
+    background-color: rgba(34, 230, 77, 0.1);
+
 }
 
 .project-card.capstone .project-badge {
     background-color: rgba(230, 126, 34, 0.1);
-    color: #e67e22;
+    color: #e0e9a5;
 }
 
 .project-card:hover {

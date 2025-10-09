@@ -261,7 +261,7 @@ function applyTheme(trackCode) {
             case 'DM':
                 banner.style.background = 'linear-gradient(90deg, #ffc107, #fff3cd)';
                 Array.from(badges).forEach(ah => {
-                    ah.style.background = 'linear-gradient(90deg, #ffc107, #fff3cd)';
+                    ah.style.background = 'linear-gradient(90deg, #ffc107, #a7820bff)';
                 });
                 break;
             case 'CY':
