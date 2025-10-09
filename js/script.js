@@ -270,13 +270,13 @@ function applyTheme(trackCode) {
                     ah.style.background = 'linear-gradient(90deg, #dc3545, #f8d7da)';
                 });
                 break;
-            case 'CD':
+            case 'DS':
                 banner.style.background = 'linear-gradient(90deg, #6f42c1, #e2d9f3)';
                 Array.from(badges).forEach(ah => {
                     ah.style.background = 'linear-gradient(90deg, #6f42c1, #e2d9f3)';
                 });
                 break;
-            case 'DS':
+            case 'CD':
                 banner.style.background = 'linear-gradient(90deg, #007bff, #80bdff)';
                 Array.from(badges).forEach(ah => {
                     ah.style.background = 'linear-gradient(90deg, #007bff, #80bdff)';
@@ -313,7 +313,7 @@ function updateTrackInfoSection(trackCode) {
             message: 'Protect Systems with Advanced Security Skills'
         },
         'CD': {
-            name: 'Cloud',
+            name: 'Cloud Computing',
             message: 'Scale Your Expertise in Cloud Technologies'
         },
         'DS': {
