@@ -17,8 +17,8 @@ const TRACK_MAP = {
     "DS": "Data Science",
     "SE": "Software Engineering",
     "DM": "Digital Marketing",
-    "CY": "Cybersecurity",
-    "CD": "Cloud",
+    "CY": "Cyber Security",
+    "CD": "Cloud Computing",
 };
 
 const DATA_PATH = 'data/projects.json'; // relative path to projects.json
@@ -309,7 +309,7 @@ function updateTrackInfoSection(trackCode) {
             message: 'Master the Art of Digital Campaigns'
         },
         'CY': {
-            name: 'Cybersecurity',
+            name: 'Cyber Security',
             message: 'Protect Systems with Advanced Security Skills'
         },
         'CD': {
