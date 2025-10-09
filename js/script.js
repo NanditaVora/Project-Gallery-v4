@@ -13,12 +13,12 @@
 // Extend this map as you support more track labels vs full names.
 const TRACK_MAP = {
     "All": null,
-    "SE": "Software Engineering",
     "DA": "Data Analytics",
+    "DS": "Data Science",
+    "SE": "Software Engineering",
     "DM": "Digital Marketing",
     "CY": "Cybersecurity",
     "CD": "Cloud",
-    "Banking": "Banking"
 };
 
 const DATA_PATH = 'data/projects.json'; // relative path to projects.json
@@ -276,7 +276,7 @@ function applyTheme(trackCode) {
                     ah.style.background = 'linear-gradient(90deg, #6f42c1, #e2d9f3)';
                 });
                 break;
-            case 'Banking':
+            case 'DS':
                 banner.style.background = 'linear-gradient(90deg, #007bff, #80bdff)';
                 Array.from(badges).forEach(ah => {
                     ah.style.background = 'linear-gradient(90deg, #007bff, #80bdff)';
@@ -316,9 +316,9 @@ function updateTrackInfoSection(trackCode) {
             name: 'Cloud',
             message: 'Scale Your Expertise in Cloud Technologies'
         },
-        'Banking': {
-            name: 'Banking',
-            message: 'Excel in Financial Services Industry'
+        'DS': {
+            name: 'Data Science',
+            message: 'Get Job-Ready Skills with Data Science'
         }
     };
 

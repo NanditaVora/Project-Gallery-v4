@@ -223,7 +223,7 @@ body {
 
 /* Add padding to main content to account for fixed header */
 #mainContent {
-    padding-top: 10rem; /* Adjust based on header height */
+    padding-top: 11rem; /* Adjust based on header height */
 }
 
 .project-gallery::before {
